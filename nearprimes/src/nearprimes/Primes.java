@@ -18,7 +18,28 @@ public class Primes {
 				break;
 			}
 			else{
-				System.out.println("You entered: " + n);
+				if ((n % 2) == 0){
+					// Implement near prime algorithm for even numbers
+				}
+				else{
+					System.out.println("You entered: " + n);
+					boolean isPrime = true;
+					for (int i = 3; i <= (n/2); i += 2){
+						if ((n % i) == 0){
+							isPrime = false;
+							break;
+						}
+						else{
+							isPrime = true;
+						}
+					}
+					if (isPrime == true){
+						System.out.println(n + " is prime.");
+					}
+					else if (isPrime == false){
+						// Implement near prime algorithm for odd numbers
+					}
+				}
 			}
 		} while (n != 0);
 		
