@@ -6,21 +6,21 @@ public class Primes {
 
 	public static void main(String[] args) {
 		
-		int input;
+		int n;
 		Scanner reader = new Scanner(System.in);
 		do {
 			System.out.print("Enter a number: ");
-			input = reader.nextInt();
-			if (input < 0) {
+			n = reader.nextInt();
+			if (n < 0) {
 				System.out.println("You entered an invalid number. Try again");
 			}
-			else if (input == 0){
+			else if (n == 0){
 				break;
 			}
 			else{
-				System.out.println("You entered: " + input);
+				System.out.println("You entered: " + n);
 			}
-		} while (input != 0);
+		} while (n != 0);
 		
 		reader.close();
 
