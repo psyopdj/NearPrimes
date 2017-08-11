@@ -6,11 +6,11 @@ public class Primes {
 
 	public static void main(String[] args) {
 		
-		int n;
+		long n;
 		Scanner reader = new Scanner(System.in);
 		do {
 			System.out.print("Enter a number: ");
-			n = reader.nextInt();
+			n = reader.nextLong();
 			if (n < 0) {
 				System.out.println("You entered an invalid number.");
 			}
@@ -20,7 +20,7 @@ public class Primes {
 			else{
 				if ((n % 2) != 0){
 					boolean isPrime = true;
-					for (int i = 3; i <= (n/2); i += 2){
+					for (long i = 3; i <= (n/2); i += 2){
 						if ((n % i) == 0){
 							isPrime = false;
 							break;
@@ -33,8 +33,8 @@ public class Primes {
 						System.out.println(n + " is prime.");
 					}
 					else if (isPrime == false){
-						int lowPrime = getLowPrime(n);
-						int highPrime = getHighPrime(n);
+						long lowPrime = getLowPrime(n);
+						long highPrime = getHighPrime(n);
 						System.out.println(lowPrime + " < " + n + " < " + highPrime);
 					}
 				}
@@ -43,8 +43,8 @@ public class Primes {
 						System.out.println(n + " is prime.");
 					}
 					else{
-						int lowPrime = getLowPrime(n);
-						int highPrime = getHighPrime(n);
+						long lowPrime = getLowPrime(n);
+						long highPrime = getHighPrime(n);
 						System.out.println(lowPrime + " < " + n + " < " + highPrime);
 					}
 				}
@@ -55,13 +55,13 @@ public class Primes {
 
 	}
 	
-	public static int getLowPrime(int num){
-		int newPrime;
+	public static long getLowPrime(long num){
+		long newPrime;
 		boolean isFound = false;
 		boolean isPrime = true;
 		while (isFound != true){
 			num--;
-			for (int i = 2; i <= (num/2); i++){
+			for (long i = 2; i <= (num/2); i++){
 				if ((num % i) == 0){
 					isPrime = false;
 					break;
@@ -82,13 +82,13 @@ public class Primes {
 		return newPrime;
 	}
 	
-	public static int getHighPrime(int num){
-		int newPrime;
+	public static long getHighPrime(long num){
+		long newPrime;
 		boolean isFound = false;
 		boolean isPrime = true;
 		while (isFound != true){
 			num++;
-			for (int i = 2; i <= (num/2); i++){
+			for (long i = 2; i <= (num/2); i++){
 				if ((num % i) == 0){
 					isPrime = false;
 					break;
