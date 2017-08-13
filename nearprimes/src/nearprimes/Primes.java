@@ -11,6 +11,7 @@ public class Primes {
 		do {
 			System.out.print("Enter a number: ");
 			n = reader.nextLong();
+			long startTime = System.currentTimeMillis();
 			if (n < 0) {
 				System.out.println("You entered an invalid number.");
 			}
@@ -31,21 +32,29 @@ public class Primes {
 					}
 					if (isPrime == true){
 						System.out.println(n + " is prime.");
+						long endTime1 = System.currentTimeMillis();
+						System.out.println("This was done in " + ((endTime1 - startTime)) + " milliseconds.");
 					}
 					else if (isPrime == false){
 						long lowPrime = getLowPrime(n);
 						long highPrime = getHighPrime(n);
 						System.out.println(lowPrime + " < " + n + " < " + highPrime);
+						long endTime2 = System.currentTimeMillis();
+						System.out.println("This was done in " + ((endTime2 - startTime)) + " milliseconds.");
 					}
 				}
 				else{
 					if (n == 2){
 						System.out.println(n + " is prime.");
+						long endTime3 = System.currentTimeMillis();
+						System.out.println("This was done in " + ((endTime3 - startTime)) + " milliseconds.");
 					}
 					else{
 						long lowPrime = getLowPrime(n);
 						long highPrime = getHighPrime(n);
 						System.out.println(lowPrime + " < " + n + " < " + highPrime);
+						long endTime4 = System.currentTimeMillis();
+						System.out.println("This was done in " + ((endTime4 - startTime)) + " milliseconds.");
 					}
 				}
 			}
@@ -59,9 +68,10 @@ public class Primes {
 		long newPrime;
 		boolean isFound = false;
 		boolean isPrime = true;
+		
 		while (isFound != true){
 			num--;
-			for (long i = 2; i <= (num/2); i++){
+			for (long i = 3; i <= (num/2); i += 2){
 				if ((num % i) == 0){
 					isPrime = false;
 					break;
@@ -86,6 +96,7 @@ public class Primes {
 		long newPrime;
 		boolean isFound = false;
 		boolean isPrime = true;
+		
 		while (isFound != true){
 			num++;
 			for (long i = 2; i <= (num/2); i++){
