@@ -10,11 +10,12 @@ public class Primes {
 		Scanner reader = new Scanner(System.in);
 		
 		/*	This loop will read in long integers and check if they are prime until
-			the user enters '0'. */
+			the user enters '0'.
+		*/
 		do {
 			System.out.print("Enter a number: ");
 			n = reader.nextLong();
-			long startTime = System.currentTimeMillis();		// This variable will keep track of starting time for us
+			long startTime = System.currentTimeMillis();		// This variable will keep track of starting time for us.
 			if (n < 0) {
 				System.out.println("You entered an invalid number.");
 			}
@@ -24,7 +25,7 @@ public class Primes {
 			else{
 				if ((n % 2) != 0){
 					boolean isPrime = true;
-					for (long i = 3; i <= (n/2); i += 2){		// Only need to check if it's divisible by odd numbers
+					for (long i = 3; i <= (n/2); i += 2){		// Only need to check if it's divisible by odd numbers.
 						if ((n % i) == 0){
 							isPrime = false;
 							break;
@@ -33,7 +34,7 @@ public class Primes {
 							isPrime = true;
 						}
 					}
-					if (isPrime == true){		// The most efficient possibility is for the entered number to already be prime so we check for that first
+					if (isPrime == true){		// The most efficient possibility is for the entered number to already be prime so we check for that first.
 						System.out.println(n + " is prime.");
 						long endTime1 = System.currentTimeMillis();
 						System.out.println("This was done in " + ((endTime1 - startTime)) + " milliseconds.");
@@ -70,7 +71,8 @@ public class Primes {
 	/*	This function takes in a long and returns the nearest prime less than the long.
 		Since primes are only odd (except for 2), the function only needs to check if
 		its divisible by odd numbers (because every odd number is the product of only
-		odd numbers). */
+		odd numbers).
+	*/
 	public static long getLowPrime(long num){
 		long newPrime;
 		boolean isFound = false;
@@ -100,9 +102,10 @@ public class Primes {
 	}
 	
 	/*	This function takes in a long and returns the nearest prime more than the long.
-	Since primes are only odd (except for 2), the function only needs to check if
-	its divisible by odd numbers (because every odd number is the product of only
-	odd numbers). */
+		Since primes are only odd (except for 2), the function only needs to check if
+		its divisible by odd numbers (because every odd number is the product of only
+		odd numbers).
+	*/
 	public static long getHighPrime(long num){
 		long newPrime;
 		boolean isFound = false;
